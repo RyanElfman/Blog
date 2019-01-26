@@ -7,7 +7,7 @@
 		var myParam = urlParams.get('url');
 		console.log(myParam);
 		var scriptElem = document.createElement('script');
-		scriptElem.src = myParam;
+		scriptElem.src = decodeURIComponent(myParam);
 		document.head.appendChild(scriptElem);
 	</script>
 </head>

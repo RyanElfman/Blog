@@ -1,6 +1,14 @@
 <!DOCTYPE html />
 <html>
 <head>
-	<script src="https://gist.github.com/RyanElfman/ce1b90dac01ae57eeb9f13b8864f3cef.js"></script>
+	<!--<script src="https://gist.github.com/RyanElfman/ce1b90dac01ae57eeb9f13b8864f3cef.js"></script>-->
+	<script>
+		var urlParams = new URLSearchParams(window.location.search);
+		var myParam = urlParams.get('url');
+
+		var scriptElem = document.createElement('script');
+		scriptElem.text = myParam;
+		document.head.appendChild(scriptElem);
+	</script>
 </head>
 </html>

@@ -10,9 +10,10 @@
 			var urlParams = new URLSearchParams(window.location.search);
 			var url = decodeURI(urlParams.get('url'));
 			var lang = urlParams.get('lang');
-			
+			var date = new Date();
+
 			var pre = document.createElement('pre');
-			pre.setAttribute('data-src', url);
+			pre.setAttribute('data-src', url + '?date=' + date.getTime());
 			pre.setAttribute('class', lang);
 			pre.setAttribute('style', 'margin:0;');
 

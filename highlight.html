@@ -9,25 +9,15 @@
 		$(document).ready(function () {
 			var urlParams = new URLSearchParams(window.location.search);
 			var url = decodeURI(urlParams.get('url'));
+			var lang = urlParams.get('lang');
 			
-			$.get(url, function (data, status) {
-				var pre = document.createElement('pre');
-				pre.setAttribute('style', 'margin:0;');
+			var pre = document.createElement('pre');
+			pre.setAttribute('data-src', url);
+			pre.setAttribute('class', lang);
+			pre.setAttribute('style', 'margin:0;');
 
-				var code = document.createElement('code');
-				code.setAttribute('class', 'language-csharp');
-				code.innerHTML = data;
-				pre.appendChild(code);	
-
-				var s1 = document.createElement('script');
-				s1.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js');
-				
-				var s2 = document.createElement('script');
-				s2.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-csharp.min.js');
-				
-				document.body.appendChild(pre);
-				Prism.highlightAll();
-			});
+			document.body.appendChild(pre);
+			Prism.fileHighlight();
 		});
 	</script>
 </head>

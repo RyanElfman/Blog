@@ -1,4 +1,4 @@
-public async Task Test()
+public void Test()
 {
 
 }

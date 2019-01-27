@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-csharp.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			var urlParams = new URLSearchParams(window.location.search);
+			var url = decodeURI(urlParams.get('url'));
+			
+			$.get(url, function (data, status) {
+				var pre = document.createElement('pre');
+				pre.setAttribute('style', 'margin:0;');
+
+				var code = document.createElement('code');
+				code.setAttribute('class', 'language-csharp');
+				code.innerHTML = data;
+				pre.appendChild(code);	
+
+				var s1 = document.createElement('script');
+				s1.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js');
+				
+				var s2 = document.createElement('script');
+				s2.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-csharp.min.js');
+				
+				document.body.appendChild(pre);
+				Prism.highlightAll();
+			});
+		});
+	</script>
+</head>
+<body style="margin:0;"></body>
+</html>

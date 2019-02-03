@@ -15,12 +15,12 @@
 			var pre = document.createElement('pre');
 			pre.setAttribute('data-src', url + '?date=' + date.getTime());
 			pre.setAttribute('class', lang);
-			pre.setAttribute('style', 'margin:0;');
+			pre.setAttribute('style', 'margin:0;max-width:850px;');
 
 			document.body.appendChild(pre);
 			Prism.fileHighlight();
 		});
 	</script>
 </head>
-<body style="margin:0;max-width:850px;"></body>
+<body style="margin:0;"></body>
 </html>

@@ -1,5 +1,7 @@
 ﻿public class OrderBook
 {
+    public const int ScaleFactor = 10_000;
+
     public OrderBook()
     {
         // Always want a single limit so we can have less checks in the Ask and Bid methods.

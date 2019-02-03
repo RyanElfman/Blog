@@ -4,13 +4,9 @@ while (order != null && shares > 0)
     if (order.Subscription.UserId == userId)
     {
         if (order.Next == null)
-        {
             break;
-        }
         else
-        {
             order = order.Next;
-        }
     }
 
     if (order.Shares >= shares)

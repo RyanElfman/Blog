@@ -1,6 +1,8 @@
 ﻿public class OrderBook
 {
     public const int ScaleFactor = 10_000;
+    private readonly object _orderLock = new object();
+    private long _orderId = 1;
 
     public OrderBook()
     {
